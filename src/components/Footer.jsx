@@ -4,11 +4,12 @@ import { Link, useLocation } from "react-router-dom";
 const Footer = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [useLocation().pathname]);
 
   return (
-    <div className="w-full bg-[#1CA449] py-[50px] text-white">
-      <div className="container">
+    <div className="w-full bg-[#1CA449] py-[32px] lg:py-[48px] text-white">
+      <div className="container p-0">
         <div className="flex flex-col items-center justify-center w-full gap-[20px]">
           <div className="flex flex-col lg:flex-row text-center lg:text-start items-center justify-center w-full gap-[20px]">
             <img src="/images/navbar/logo.png" alt="img-logo" />
@@ -24,9 +25,9 @@ const Footer = () => {
             </div>
           </div>
           <a
-            aria-label="WhatsApp."
             href="https://wa.me/6282113277327?text=Halo%20ada%20yang%20bisa%20kami%20bantu?%0A%0Ahttps://kreasiagromandiri.com/"
-            target="_blank"
+            aria-label="WhatsApp."
+            target="_blank" rel="noreferrer"
           >
             <div className="contact flex gap-2 hover:font-bold">
               <svg
@@ -47,7 +48,7 @@ const Footer = () => {
           <a
             aria-label="email."
             href="mailto:contact@kreasiagromandiri.com?subject=Contact Us Via Website&body=Name:%0A%0AQuestion:"
-            // target="_blank"
+          // target="_blank"
           >
             <div className="email flex gap-2 hover:font-bold">
               <svg
@@ -62,27 +63,27 @@ const Footer = () => {
               <p>contact@kreasiagromandiri.com</p>
             </div>
           </a>
-          <div className="flex items-center gap-[25px] font-bold text-[12px] lg:text-lg">
+          <div className="flex items-center gap-[12px] lg:gap-[24px] font-bold text-[12px] lg:text-lg">
             <Link
               to="/"
-              className="hover:bg-white hover:text-[#1CA449] py-2 px-4 rounded-md"
+              className="hover:bg-white hover:text-[#1CA449] py-2 px-4 rounded-md transition duration-300 ease-in-out"
             >
               <p>Product</p>
             </Link>
             <Link
               to="/gallery"
-              className="hover:bg-white hover:text-[#1CA449] py-2 px-4 rounded-md"
+              className="hover:bg-white hover:text-[#1CA449] py-2 px-4 rounded-md transition duration-300 ease-in-out"
             >
               <p>Gallery</p>
             </Link>
             <Link
               to="/about"
-              className="hover:bg-white hover:text-[#1CA449] py-2 px-4 rounded-md"
+              className="hover:bg-white hover:text-[#1CA449] py-2 px-4 rounded-md transition duration-300 ease-in-out"
             >
               <p>About</p>
             </Link>
             <Link to="/contact-us">
-              <p className="border py-2 px-8 rounded-lg hover:bg-white hover:text-[#1CA449]">
+              <p className="border py-2 px-4 lg:px-8 rounded-lg hover:bg-white hover:text-[#1CA449] transition duration-300 ease-in-out">
                 Contact Us
               </p>
             </Link>

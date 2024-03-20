@@ -227,7 +227,7 @@ const Home = () => {
                   500 million worth of products to more than 10 customers.
                 </p>
                 <Link to="/about">
-                  <button className="bg-[#1CA449] py-3 px-6 lg:text-xl text-md mt-6 rounded-lg text-white font-bold hover:bg-white hover:border-[#1CA449] border hover:text-[#1CA449]">
+                  <button className="bg-[#1CA449] py-3 px-6 lg:text-xl text-md mt-6 rounded-lg text-white font-bold hover:bg-white hover:border-[#1CA449] border hover:text-[#1CA449] transition duration-300 ease-in-out">
                     Find out more
                   </button>
                 </Link>
@@ -242,14 +242,14 @@ const Home = () => {
         <div className="container">
           <div className="flex flex-col-reverse gap-10 lg:gap-0 lg:flex-row items-center justify-between">
             <div className="content-1 text-white w-full text-center lg:text-start">
-              <h1 className="text-[46px] lg:text-[64px] font-semibold">
+              <h1 className="text-[36px] lg:text-[64px] font-semibold lg:mb-0 mb-4">
                 Our Products
               </h1>
               <p className="text-lg lg:text-2xl">
                 {selectedProductDescription}
               </p>
               <Link to="/product">
-                <button className="bg-white py-3 lg:py-4 px-6 text-md lg:text-lg mt-6 rounded-lg text-[#1CA449] font-bold hover:bg-[#1ca449] hover:border-white border hover:text-white">
+                <button className="bg-white py-3 lg:py-4 px-6 text-md lg:text-lg mt-6 rounded-lg text-[#1CA449] font-bold hover:bg-[#1ca449] hover:border-white border hover:text-white transition duration-300 ease-in-out">
                   Discover More
                 </button>
               </Link>
@@ -262,9 +262,8 @@ const Home = () => {
                     {new Array(length).fill("").map((_, i) => (
                       <span
                         key={i}
-                        className={`block h-1 cursor-pointer rounded-2xl transition-all content-[''] ${
-                          activeIndex === i ? "w-8 bg-white" : "w-4 bg-white/50"
-                        }`}
+                        className={`block h-1 cursor-pointer rounded-2xl transition-all content-[''] ${activeIndex === i ? "w-8 bg-white" : "w-4 bg-white/50"
+                          }`}
                         onClick={() => {
                           setActiveIndex(i);
                           handleProductDescriptionChange(i); // Memperbarui deskripsi produk saat indeks gambar berubah
@@ -282,14 +281,14 @@ const Home = () => {
                       handlePrev();
                       setActiveIndex(
                         (activeIndex - 1 + productImg.length) %
-                          productImg.length
+                        productImg.length
                       );
                       handleProductDescriptionChange(
                         (activeIndex - 1 + productImg.length) %
-                          productImg.length
+                        productImg.length
                       );
                     }}
-                    className="!absolute top-2/4 left-4 -translate-y-2/4 bg-gray-400 bg-opacity-40 hover:bg-opacity-80 lg:bg-transparent"
+                    className="!absolute top-2/4 left-4 -translate-y-2/4 bg-gray-200 bg-opacity-70 rounded-full hover:bg-opacity-80 lg:bg-transparent lg:w-full w-[42px] lg:h-full h-[42px] shadow-xl"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -297,12 +296,13 @@ const Home = () => {
                       viewBox="0 0 24 24"
                       strokeWidth={1.5}
                       stroke="currentColor"
-                      className="w-10 h-10"
+                      className="lg:w-10 w-7 lg:h-10 h-7"
                     >
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
                         d="M15.75 19.5 8.25 12l7.5-7.5"
+                        stroke="gray"
                       />
                     </svg>
                   </IconButton>
@@ -319,7 +319,7 @@ const Home = () => {
                         (activeIndex + 1) % productImg.length
                       );
                     }}
-                    className="!absolute top-2/4 !right-4 -translate-y-2/4 bg-gray-400 bg-opacity-40 hover:bg-opacity-80 lg:bg-transparent"
+                    className="!absolute top-2/4 !right-4 -translate-y-2/4 bg-gray-200 bg-opacity-70 rounded-full hover:bg-opacity-80 lg:bg-transparent lg:w-full w-[42px] lg:h-full h-[42px] shadow-xl"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -327,12 +327,13 @@ const Home = () => {
                       viewBox="0 0 24 24"
                       strokeWidth={1.5}
                       stroke="currentColor"
-                      className="w-10 h-10"
+                      className="lg:w-10 w-7 lg:h-10 h-7"
                     >
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
                         d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                        stroke="gray"
                       />
                     </svg>
                   </IconButton>
@@ -350,9 +351,9 @@ const Home = () => {
                     <img
                       src={item.nameImg}
                       alt={item.alt}
-                      className="rounded-[50px] w-[380px] h-[480px] object-cover shadow-md shadow-[#38744c]"
+                      className="rounded-[32px] w-[380px] h-[480px] object-cover shadow-md shadow-[#38744c]"
                     />
-                    <h3 className="text-[32px] text-white mb-2">{item.nama}</h3>
+                    <h3 className="lg:text-[32px] text-[28px] text-white mb-2">{item.nama}</h3>
                   </div>
                 ))}
               </Carousel>
@@ -432,9 +433,9 @@ const Home = () => {
               <a
                 aria-label="WhatsApp."
                 href="https://wa.me/6282113277327?text=Halo%20ada%20yang%20bisa%20kami%20bantu?%0A%0Ahttps://kreasiagromandiri.com/"
-                target="_blank"
+                target="_blank" rel="noreferrer"
               >
-                <button className="bg-[#1CA449] py-3 mt-8 px-10 text-md lg:text-lg rounded-lg text-white font-bold hover:bg-white hover:border-[#1ca449] border hover:text-[#1ca449]">
+                <button className="bg-[#1CA449] py-3 mt-8 px-10 text-md lg:text-lg rounded-lg text-white font-bold hover:bg-white hover:border-[#1ca449] border hover:text-[#1ca449] transition duration-300 ease-in-out">
                   Contact Us (WhatsApp)
                 </button>
               </a>

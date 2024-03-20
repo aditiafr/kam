@@ -75,15 +75,15 @@ const About = () => {
                 Harvesting Freshness, Delivering Quality
               </p>
             </div>
-            <div className="flex items-center justify-center gap-10 lg:gap-[150px] w-full mt-[180px] mb-[100px]">
+            <div className="flex items-center justify-center gap-6 lg:gap-[150px] w-full mt-[180px] mb-[100px]">
               {imgIcon.map((item, index) => (
                 <div
                   key={index}
                   className="flex flex-col text-center items-center justify-center text-white"
                 >
-                  <img src={item.nameImg} alt={item.alt} />
-                  <h3 className="font-semibold text-xl mt-4">{item.h3}</h3>
-                  <p className="text-xl">{item.p}</p>
+                  <img src={item.nameImg} alt={item.alt} className="w-[32px]" />
+                  <h3 className="font-semibold lg:text-xl text-sm mt-4">{item.h3}</h3>
+                  <p className="lg:text-xl text-sm">{item.p}</p>
                 </div>
               ))}
             </div>

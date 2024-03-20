@@ -24,7 +24,8 @@ function App() {
   }, [location]); // Trigger effect on location change
 
   return (
-    <> <Navbar />
+    <>
+      <Navbar />
       <main className="mt-20">
         {loading ? (
           // Display loading screen here
